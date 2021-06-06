@@ -109,7 +109,7 @@ If  this  message  is  sent  by  a  client  having  the  request  for joining th
 
 ### Points to note:
 
-#### Server Side1.
+#### Server Side.
 1) select() is used for the implementation.
 2) Used send() and recv() system call.
 3) If client B wants to send message to client A, B won’t be able to send to A’s socket directly. Instead it uses message details table at server side. Client B will send message to server and then server will pass on the message to client A.
@@ -118,5 +118,5 @@ If  this  message  is  sent  by  a  client  having  the  request  for joining th
 6) It handle cases when a client is no longer a part of a group, and similar cases.
 7) If a client who initiate the group quits from the server then every group which he owns should be automatically deleted.
 
-#### Client Side1.
+#### Client Side.
 Reading  is done from the standard input and writing to the server (send() system call) and reading from the server (recv() system call) will be handled by different processes (i have used fork here).
