@@ -47,5 +47,11 @@ To display all the groups which are active on theserver.
 #### 12./joingroup  #group  id#: 
 If  this  message  is  sent  by  a  client  having  the  request  for joining the group, then he will be added to group immediately. Otherwise a request should  be  passed  to  the  admin  of  that  group  and  if  admin  responds  to  the  request positively then he should be joined to that group.
 
+
+
+![rsz_screenshot_70](https://user-images.githubusercontent.com/28837542/120936627-6dd08980-c726-11eb-860b-17c074892c1b.png)
+
+
+
 Things to remember:Server Side1.Use select() for the implementation.2.Use send() and recv() system call. It will make your lifeeasier.3.If client B wants to send message to client A, B won’t be able to send to A’s socket directly. Instead use message details tableat server side. Client B will send message to server and then server will pass on the message to client A.
 4.Server will check in message details table. If it founds an entry of a particular client with dest_id as it’s sock_id, then send the message to the client. Remove thatentry.5.Log messages on server (server’s terminal).6.Handle cases when a client is no longer a part of a group, and similarcases.7.If a client who initiate the group quits from the server then every group which he owns should be automatically deleted.Client Side1. Reading from the standard input and writing to the server (send() system call) and reading from the server (recv() system call) will be handled by different processes (use fork here, we believe you know the reason)
